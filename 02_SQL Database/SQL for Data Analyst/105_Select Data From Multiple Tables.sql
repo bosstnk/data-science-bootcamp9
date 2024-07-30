@@ -18,3 +18,17 @@ SELECT
 FROM artists AS art 
 JOIN albums AS alb
 ON art.ArtistId = alb.ArtistID
+
+--more example
+SELECT 
+    art.ArtistId,
+    art.Name,
+    alb.Title,
+    tra.Name,
+    tra.Composer
+FROM artists AS art 
+JOIN albums AS alb
+on art.ArtistId = alb.ArtistId
+JOIN tracks AS tra
+ON	alb.AlbumId = tra.AlbumId
+WHERE art.Name ='Aerosmith';
