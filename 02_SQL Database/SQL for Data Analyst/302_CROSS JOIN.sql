@@ -15,6 +15,6 @@ VALUES('Clubs'),('Diamonds'),('Hearts'),('Spades');
 
 ---------------------------------------------------------
 
--- cross join both tables to create a full card deck
+-- CROSS JOIN both tables to create a full card deck
 SELECT * FROM ranks 
 CROSS JOIN suits ORDER BY suit;
