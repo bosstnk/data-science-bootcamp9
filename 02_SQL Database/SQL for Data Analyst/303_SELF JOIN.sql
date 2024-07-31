@@ -20,7 +20,7 @@ INSERT INTO employee VALUES
 
 ---------------------------------------------------------
 
---SELF JOIN
+--SELF JOIN for a table that has a relationship with itself.
 SELECT 
 	t1.id, 
     t1.name AS employeeName, 
