@@ -1,4 +1,4 @@
--- use book database 
+-- use book database (301_INER JOIN and LEFT JOIN) 
 -- create a new book shop table
 CREATE TABLE book_shop_new (
   	id INT,
