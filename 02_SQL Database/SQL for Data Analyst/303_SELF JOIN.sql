@@ -18,7 +18,7 @@ INSERT INTO employee VALUES
     (9, 'Joe', 'AM', 6),
     (10, 'Anna', 'AM', 7);
 
-
+---------------------------------------------------------
 
 --SELF JOIN
 SELECT 
