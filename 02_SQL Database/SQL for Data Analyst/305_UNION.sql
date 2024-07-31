@@ -23,3 +23,6 @@ SELECT * FROM book_shop
 UNION ALL
 SELECT * FROM book_shop_new
 ORDER BY 1 ASC;
+
+-- UNION does not show duplicate records from both tables; if there are duplicates, it will display only one record."
+-- UNION ALL will show all records from both tables, even if they are duplicates.
