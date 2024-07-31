@@ -13,6 +13,8 @@ VALUES('2'),('3'),('4'),('5'),('6'),('7'),('8'),('9'),('10'),('J'),('Q'),('K'),(
 INSERT INTO suits(suit) 
 VALUES('Clubs'),('Diamonds'),('Hearts'),('Spades');
 
+---------------------------------------------------------
+
 -- cross join both tables to create a full card deck
 SELECT * FROM ranks 
 CROSS JOIN suits ORDER BY suit;
