@@ -204,3 +204,60 @@ mtcars %>%
   mutate(pecentage = n / sum(n))
 
 ################################################################################
+
+library(RSQLite)
+library(tidyverse)
+
+## connect to sqlite.db file
+con <- dbConnect(SQLite(), "chinook.db")
+
+## list tables
+dbListTables(con)
+
+## list fields/ columns
+dbListFields(con, "customers")
+
+## get data from database tables
+m1 <- dbGetQuery(con, "select firstname, email from customers
+            where country = 'USA' ")
+
+## create dataframe 
+products <- tribble(
+  ~id, ~product_name,
+  1, "chocolate",
+  2, "pineapple",
+  3, "samsung galaxy S23"
+)
+
+## write table to database
+dbWriteTable(con, "products", products)
+
+## remove table
+dbRemoveTable(con, "products")
+
+## close connection
+dbDisconnect(con)
+
+################################################################################
+
+## connect to PostgreSQL server
+library(RPostgreSQL)
+library(tidyverse)
+
+## create connection
+con <- dbConnect(
+  PostgreSQL(),
+  host = "arjuna.db.elephantsql.com",
+  dbname = "hcmsanst",
+  user = "hcmsanst",
+  password = "n9MIT1wNqy6HG5HsO-ypvf8SLD4VfMCh",
+  port = 5432
+)
+
+## db List Tables
+dbListTables(con)
+
+dbWriteTable(con, "products", products)
+
+## get data
+df <- dbGetQuery(con, "select id, product_name from products")
